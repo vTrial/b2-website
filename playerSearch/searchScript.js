@@ -135,6 +135,7 @@ function processData(json, searchMode, searchValue) {
 
 function generatePlayerCard(player, rankIndex) {
     const playerCard = document.createElement('div');
+    const playerId = player.profile.split("/")[5];
     playerCard.classList.add('playerCard');
     playerCard.innerHTML = `
     <div class="playerImageContainer">
@@ -144,7 +145,7 @@ function generatePlayerCard(player, rankIndex) {
     <h3 class="playerCardName">${player.displayName}</h3>
     <p class="playerCardScore"><span class="playerCardScoreLabel playerCardLabel">Score:</span> ${player.score}</p>
     <p class="playerCardPlace"><span class="playerCardPlaceLabel playerCardLabel">Place:</span> ${rankIndex}</p>
-    <a class="playerCardLink" href="../playerInfo/playerInfo.html?${player.profile}"><div class="playerCardProfileButton">Profile</div></a>
+    <a class="playerCardLink" href="../playerInfo/playerInfo.html?${playerId}"><div class="playerCardProfileButton">Profile</div></a>
     </div>
     `;
     document.querySelector('.resultsOutput').appendChild(playerCard);

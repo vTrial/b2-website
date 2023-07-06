@@ -34,6 +34,7 @@ function getLeaderboardInfo(url) {
 function createLeaderboard(json) {
     for (let i = 0; i < 20; i++) {
         let player = json.body[i];
+        const playerId = player.profile.split("/")[5];
         let playerRow = document.createElement('tr');
         playerRow.classList.add('playerRow');
         let playerName = document.createElement('td');
@@ -55,7 +56,7 @@ function createLeaderboard(json) {
         playerRow.dataset.profileURL = player.profile;
         playerRow.classList.add('playerRow');
         playerRow.addEventListener('click', () => {
-            window.location.href ='playerInfo/playerInfo.html?' + playerRow.dataset.profileURL;
+            window.location.href ='playerInfo/playerInfo.html?' + playerId;
         });
         document.querySelector('.leaderboard>tbody').appendChild(playerRow);
     }

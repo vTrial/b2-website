@@ -17,7 +17,8 @@ function mobileMenu() {
 function fetchResults() {
 
   // Assemble the full URL
-  let url = window.location.toString().replace(/^[^?]*/, '').replace(/^\?/, '');
+  const url_start = "https://data.ninjakiwi.com/battles2/users/";
+  let url = url_start + window.location.toString().replace(/^[^?]*/, '').replace(/^\?/, '');
   // Use fetch() to make the request to the API
   fetch(url)
     .then((response) => response.json())

@@ -49,6 +49,7 @@ function createLeaderboardPage(json, startingPlace, output) {
     let place = startingPlace
     for (let i = 0; i < json.body.length; i++) {
         let player = json.body[i];
+        const playerId = player.profile.split("/")[5];
         let playerRow = document.createElement('tr');
         playerRow.classList.add('playerRow');
         let playerName = document.createElement('td');
@@ -70,7 +71,7 @@ function createLeaderboardPage(json, startingPlace, output) {
         playerRow.dataset.profileURL = player.profile;
         playerRow.classList.add('playerRow');
         playerRow.addEventListener('click', () => {
-            window.open('../playerInfo/playerInfo.html?' + playerRow.dataset.profileURL, '_self');
+            window.open('../playerInfo/playerInfo.html?' + playerId, '_self');
         });
         output.appendChild(playerRow);
     }

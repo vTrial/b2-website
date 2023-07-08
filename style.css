@@ -56,9 +56,6 @@ main {
   width: 100vw;
 }
 
-.leaderboardDisplay {
-  flex: 2;
-}
 /* Header
 Styles */
 
@@ -277,16 +274,15 @@ body .toolList > li.currentPage:active {
 }
 
 .leaderboard {
-  flex: 1 1 50%;
+  flex: 8;
   background-color: #ffcc66;
   color: black;
-  border: 1px solid  #ffaa00;
   border-radius: 10px;
-  width: 80%;
+  border-collapse: collapse;
 }
 
 .leaderboardSpacer {
-  flex: 3;
+  flex: 1;
 }
 
 
@@ -445,6 +441,9 @@ footer {
     margin: 0 0 20px 0;
   }
 
+  .leaderboard {
+    flex: 18;
+  }
   nav.toolsSection .toolList {
     background-color: #0A2647;
     position: fixed;
